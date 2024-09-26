@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budgeting App with Authentication</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- Registration Form -->
+    <div id="register-form" class="auth-container">
+        <h2>Register</h2>
+        <input type="text" id="register-username" placeholder="Enter username" required>
+        <input type="password" id="register-password" placeholder="Enter password" required>
+        <button id="register-btn">Register</button>
+        <p>Already have an account? <span id="show-login">Login here</span></p>
+    </div>
+
+    <!-- Login Form -->
+    <div id="login-form" class="auth-container">
+        <h2>Login</h2>
+        <input type="text" id="login-username" placeholder="Enter username" required>
+        <input type="password" id="login-password" placeholder="Enter password" required>
+        <button id="login-btn">Login</button>
+        <p>Don't have an account? <span id="show-register">Register here</span></p>
+    </div>
+
+    <!-- Budgeting App (Visible after login) -->
+    <div id="app-container" class="hidden">
+        <div class="container">
+            <h1>Budget Tracker</h1>
+            <button id="logout-btn">Logout</button>
+            <div class="balance-display">
+                <h2>Balance: <span id="balance">$0.00</span></h2>
+                <h2>Total Income: <span id="total-income">$0.00</span></h2>
+                <h2>Total Expenses: <span id="total-expenses">$0.00</span></h2>
+            </div>
+
+            <div class="transaction-form">
+                <h3>Add New Transaction</h3>
+                <input type="text" id="transaction-name" placeholder="Enter description" required>
+                <input type="number" id="transaction-amount" placeholder="Enter amount" required>
+                <select id="transaction-type">
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+                <button id="add-transaction-btn">Add Transaction</button>
+            </div>
+
+            <div class="transaction-history">
+                <h3>Transaction History</h3>
+                <ul id="transaction-list"></ul>
+            </div>
+
+            <canvas id="expenseChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
